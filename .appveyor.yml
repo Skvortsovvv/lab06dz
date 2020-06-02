@@ -14,15 +14,17 @@ build_script:
 - cmd: cmake --build _build
 - cmd: cmake --build _build --target solver --config Release
 - cmd: echo "Solver is done"
+- cmd: cd _build
+- cmd: cpack -G WIX
 
 deploy:
-    - provider: GitHub
-      artifact: solver_application\_build\*.msi
-      draft: false
-      prerelease: false
-      on:
+    provider: GitHub
+    description: '$(APPVEYOR_REPO_TAG_NAME)'
+    auth_token:
+        secure: pp9qdC6EytDKxk6pAPdSgh8Y1wLLQqQlOYR+/EsyakD2CrhAehyPnA/24HnVr39t
+    artifact: solver_application\_build\*.msi
+    draft: false
+    prerelease: false
+    on:
         branch: master
         APPVEYOR_REPO_TAG: true
-
-after_deploy:
-    - cmd: cpack -G WIX
