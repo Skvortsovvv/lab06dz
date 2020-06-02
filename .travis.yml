@@ -42,8 +42,7 @@ script:
 
 deploy:
   provider: releases
-  api_key:
-    secure: oMkO1a3ZHcjAokORO4A6758tMmojUXJbgAs3h8IgjMwl+WTW/kYDrw5nWjhf7bIZp3FT7S6JIfpWxvdp+L8HpVp43+9dXKnqzujE7/L2mQUz7k11l4orrZun0uyhWcPEAZrHqrz8pMheCXuMszKoDfLUp3175P3BC9Fie1tJ7F27MCrVzgdXVtD87UmmA8XADcpHCd63l/Ve/hNXLwLcHosPc/eVQvxT693uMuCCrK5l+TmeKAG0R0Are35OhCujdbvV2EhgKEbD3sScF+2Lpecbx22W3lcVedh4gXXzQpAP/pYZWWOCfwLqjnxpePlvCX2EH+e9RjZqRzBPyhlOk7LFsyfVZKEDF0xbihSzfCXEqokPDvAO3W9obYfvbOTxKX5gs+Ko6546kW/F8xDg6F945p1EHfy8NuQRfX7OuGJHsi6uyrF2jq6j1wc8hFdd6dh3MKIL8ckaiy/z4B7QUsrfJLvHPWzV/NQ+Hpiqe2qbA+rnNgOeOTRt8/ZKb/fUgaZ5AxJxXu+2YcCND4gHl04JQMNEhCCLMAtFWAzVfQELnhxogSjOcU910TLfK+LfLznCsdIfvFmq+HGwmqPQLOuBgIy0RI1J5bu1fmcwgrk1c8DRwhKTex+ISdeb0K2XLljgbgZC7bP760vAc4LWe5/IFlJwCa+mvt4ApRyK4MM=
+  api_key: bf5ce1e1255400f7ecddf4991d37c826c210bc41
   file_glob: true
   file:
     - solver_application/_build/*.tar.gz
