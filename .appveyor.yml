@@ -1,4 +1,6 @@
-image: Visual Studio 2019
+platform:
+    - x86
+    - x64
 
 build_script:
 - cmd: cd hello_world_application
@@ -6,11 +8,21 @@ build_script:
 - cmd: cmake --build _build
 - cmd: cmake --build _build --target hello_world
 - cmd: _build\Debug\hello_world.exe
-- cmd: echo "Testing hello_world is done"
 - cmd: cd ..
 - cmd: cd solver_application
 - cmd: cmake -H. -B_build
 - cmd: cmake --build _build
 - cmd: cmake --build _build --target solver --config Release
-- cmd: echo "Testing solver is done"
+- cmd: echo "Solver is done"
 
+deploy:
+    - provider: GitHub
+      artifact: solver_application\_build\*.msi
+      draft: false
+      prerelease: false
+      on:
+        branch: master
+        APPVEYOR_REPO_TAG: true
+
+after_deploy:
+    - cmd: cpack -G WIX
