@@ -18,13 +18,12 @@ build_script:
 - cmd: cpack -G WIX
 
 deploy:
+    description: 'MSI release'
     provider: GitHub
-    description: '$(APPVEYOR_REPO_TAG_NAME)'
     auth_token:
         secure: pp9qdC6EytDKxk6pAPdSgh8Y1wLLQqQlOYR+/EsyakD2CrhAehyPnA/24HnVr39t
     artifact: solver_application\_build\*.msi
     draft: false
-    prerelease: false
     on:
         branch: master
         APPVEYOR_REPO_TAG: true
